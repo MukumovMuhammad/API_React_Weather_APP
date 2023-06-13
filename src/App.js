@@ -63,15 +63,16 @@ function App() {
         {/* TOP */}
         <div className="top">
           <div className='location'>
-            <p>{data.name}</p>
+            <p>Location : {data.name}</p>
           </div>
 
           <div className='temp'>
-            {data.main ? <h1> {data.main.temp.toFixed()} °C</h1> : <h1> °C</h1>}
+            <h1> {data.main.temp.toFixed()} °C <img alt='weather-icon' src='icons/01d.png'/></h1>
+            
           </div>
           <div className='description'>
 
-            {data.main ? <p>Description: {data.weather[0].description}</p> : <p>Description:</p>}
+            <p>Description: {data.weather[0].description}</p>
           </div>
         </div>
 
@@ -79,17 +80,17 @@ function App() {
         <div className="buttom">
 
           <div className='feels'>
-            {data.main ? <p> {data.main.feels_like.toFixed()}</p> : null}
+            <p> {data.main.feels_like.toFixed()}</p>
             <p>Feels like </p>
           </div>
 
 
           <div className='humidity'>
-            {data.main ? <p> {data.main.humidity}%</p> : null}
+            <p> {data.main.humidity}%</p>
             <p>Humidity</p>
           </div>
           <div className='wind'>
-            {data.main ? <p> {data.wind.speed.toFixed()}MPH</p> : null}
+            <p> {data.wind.speed.toFixed()}MPH</p>
             <p>Wind</p>
           </div>
         </div>

@@ -1,3 +1,13 @@
+.accordion{
+  border: red 1px solid;
+  width: 50vh;
+  color:aliceblue;
+}
+
+h2{
+  color:antiquewhite;
+}
+
 .daily-details-grid {
     grid-row-gap: 0;
     grid-column-gap: 15px;
@@ -24,3 +34,4 @@
   .daily-details-grid-item label:last-child {
     color: white
   }
+
