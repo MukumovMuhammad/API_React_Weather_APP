@@ -3,10 +3,15 @@ import { Accordion, AccordionItem, AccordionItemButton, AccordionItemHeading, Ac
 
 import "./forecast.css"
 
-
+const week = [ "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday", "Sunday"]
 
 const Forecast = ({data}) => {
-
+let show = false;
+if(!show){
+    console.log("-------------Data List-------------")
+    console.log(data.list);
+    show = true;
+}
     return (
         <div>
             <h2>Daily</h2>
@@ -17,38 +22,38 @@ const Forecast = ({data}) => {
                         <AccordionItemHeading>
                             <AccordionItemButton>
                                 <div className="daily-item">
-                                    <img />
-                                    <label className="day">sdsd</label>
-                                    <label className="description">sd</label>
-                                    <label className="min-max"></label>
+                                    <img src={`icons/${item.weather[0].icon}.png`}/>
+                                    <label className="day">{week[index]}</label>
+                                    <label className="description">{item.weather[0].description}</label>
+                                    <label className="min-max">{item.main.temp_min} ~ {item.main.temp_min}</label>
                                 </div>
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
                             <div className="daily-details-grid">
                                 <div className="daily-details-grid-item">
-                                    <label></label>
-                                    <label></label>
+                                    <label>Pressure: </label>
+                                    <label>{item.main.pressure}</label>
                                 </div>
                                 <div className="daily-details-grid-item">
-                                    <label></label>
-                                    <label></label>
+                                    <label>Clouds :</label>
+                                    <label>{item.clouds.all}</label>
                                 </div>
                                 <div className="daily-details-grid-item">
-                                    <label></label>
-                                    <label></label>
+                                    <label>Sea level: </label>
+                                    <label>{item.main.sea_level}</label>
                                 </div>
                                 <div className="daily-details-grid-item">
-                                    <label></label>
-                                    <label></label>
+                                    <label>Humidity: </label>
+                                    <label>{item.main.humidity}</label>
                                 </div>
                                 <div className="daily-details-grid-item">
-                                    <label></label>
-                                    <label></label>
+                                    <label>Wind speed: </label>
+                                    <label>{item.wind.speed}</label>
                                 </div>
                                 <div className="daily-details-grid-item">
-                                    <label></label>
-                                    <label></label>
+                                    <label>Feels like: </label>
+                                    <label>{item.main.feels_like}</label>
                                 </div>
                             </div>
                         </AccordionItemPanel>
