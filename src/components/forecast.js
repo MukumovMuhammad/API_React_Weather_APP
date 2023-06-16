@@ -6,15 +6,9 @@ import "./forecast.css"
 const week = [ "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday", "Sunday"]
 
 const Forecast = ({data}) => {
-let show = false;
-if(!show){
-    console.log("-------------Data List-------------")
-    console.log(data.list);
-    show = true;
-}
     return (
         <div>
-            <h2>Daily</h2>
+            {data.list && <h2>Daily</h2>}
             <Accordion allowZeroExpanded className="accordion">
                 
                 {data.list && data.list.splice(0, 7).map((item, index) => (
@@ -22,10 +16,10 @@ if(!show){
                         <AccordionItemHeading>
                             <AccordionItemButton>
                                 <div className="daily-item">
-                                    <img src={`icons/${item.weather[0].icon}.png`}/>
+                                    <img id='img' src={`icons/${item.weather[0].icon}.png`}/>
                                     <label className="day">{week[index]}</label>
                                     <label className="description">{item.weather[0].description}</label>
-                                    <label className="min-max">{item.main.temp_min} ~ {item.main.temp_min}</label>
+                                    <label className="min-max">{item.main.temp_min} / {item.main.temp_min}</label>
                                 </div>
                             </AccordionItemButton>
                         </AccordionItemHeading>

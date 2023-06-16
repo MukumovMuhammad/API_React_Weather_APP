@@ -1,5 +1,4 @@
 .accordion{
-  border: red 1px solid;
   width: 50vh;
   color:aliceblue;
 }
@@ -25,13 +24,38 @@ h2{
     display: flex;
     height: 30px;
     justify-content: space-between;
+
   }
   
   .daily-details-grid-item label:first-child {
-    color: #757575;
+    color: #d6cc92;
+    font-size: large;
   }
   
   .daily-details-grid-item label:last-child {
     color: white
   }
 
+.daily-item{
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  height: 100px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  justify-content: space-around;
+}
+
+.daily-item label{
+margin-left: 10px;
+}
+
+.daily-item .day{
+  font-size: large;
+  font-weight:bold;
+}
+
+#img{
+  width: 50px;
+  height: 50px;
+}
